@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {addToDo, completeTodo, setVisibilityFilter, VisibilityFilters} from '../actions/actions';
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 
 class App extends Component {
   render() {
