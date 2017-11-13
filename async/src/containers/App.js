@@ -6,14 +6,10 @@ import Picker from '../components/Picker'
 import Posts from '../components/Posts'
 
 class App extends Component {
-  static propTypes = {
-    selectedReddit: PropTypes.string.isRequired,
-    posts: PropTypes.array.isRequired,
-    isFetching: PropTypes.bool.isRequired,
-    lastUpdated: PropTypes.number,
-    dispatch: PropTypes.func.isRequired
+  constructor(props){
+    super(props);
+    console.log(props)
   }
-
   componentDidMount() {
     const { dispatch, selectedReddit } = this.props
     dispatch(fetchPostsIfNeeded(selectedReddit))
@@ -70,7 +66,16 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  selectedReddit: PropTypes.string.isRequired,
+  posts: PropTypes.array.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  lastUpdated: PropTypes.number,
+  dispatch: PropTypes.func.isRequired
+};
+
 const mapStateToProps = state => {
+  console.log(state)
   const { selectedReddit, postsByReddit } = state
   const {
     isFetching,
